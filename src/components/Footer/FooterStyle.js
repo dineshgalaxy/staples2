@@ -2,7 +2,7 @@ import { makeStyles } from "@mui/styles";
 import color from "../utils/color";
 import typography from "../utils/typography";
 const useStyles = makeStyles((theme) => ({
- footermenu: {
+  footermenu: {
     "& li": {
       paddingLeft: "15px",
       "& a:hover": {
@@ -11,7 +11,6 @@ const useStyles = makeStyles((theme) => ({
       },
     },
   },
-
 }));
 
 export default useStyles;

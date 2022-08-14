@@ -17,16 +17,16 @@ const Accordion = {
     MuiAccordionSummary: {
         styleOverrides: {
             root: {
-                justifyContent: 'flex-start'
+                // justifyContent: 'flex-start'
             },
             content: {
-                flexGrow: 0,
-                margin: 0
+                // flexGrow: 0,
+                // margin: 0
             },
            
             expandIconWrapper: {
                 '& svg': {
-                    color: 'white'
+                    // color: 'white'
                 }
             }
         }

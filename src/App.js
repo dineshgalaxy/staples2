@@ -8,6 +8,11 @@ import Menubar from './components/Header/menubar/Menubar';
 import MiddleHeader from './components/Header/MiddleHeader/MiddleHeader';
 import Banner from './components/Banner/Banner';
 import Flyers from './components/Flyers/Flyers';
+import Products from './components/Products/Products';
+import Brands from './components/Brands/Brands';
+import Updates from './components/Updates/Updates';
+import ControlledAccordions from './components/demo';
+import Footer from './components/Footer/Footer';
 function App() {
   return (
    <ThemeProvider theme={theme}>
@@ -19,6 +24,10 @@ function App() {
     <Menubar/>
   <Banner/>
   <Flyers/>
+  <Products/>
+  <Brands/>
+  <Updates/>
+  <Footer/>
    </ThemeProvider>
   );
 }
