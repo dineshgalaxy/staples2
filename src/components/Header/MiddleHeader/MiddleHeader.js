@@ -22,20 +22,23 @@ import ListItem from '@mui/material/ListItem';
 const MiddleHeader = (props) => {
     const Styles = useStyles();
     return (
-        <Box border="1px solid #e7e7e7">
+        <Box border="1px solid #e7e7e7" >
             <Container maxWidth="xl">
                 <Box className={Styles.middleheader}>
-                <Hamburger size={20} />
-                    <Box className={Styles.logo}>
-                      <Link><img src="logo-en.svg" alt="logo-en.svg"></img></Link>
+                   
+                    <Box className={Styles.logo} display="flex" alignItems="center" justifyContent="center">
+                    <Box className={Styles.humburger} >
+                        <Hamburger size={18} />
+                    </Box>
+                        <Link href="#"><img src="logo-en.svg" alt="logo-en.svg" width="100%"></img></Link>
                     </Box>
                     <Box className={Styles.searchTop} display="flex">
                         <Box className={Styles.searchbar}>
                             <Box className={Styles.search}>
-                                <FormControl variant="outlined" >
+                                <FormControl variant="outlined" className={Styles.formControl} >
                                     <OutlinedInput
-                                    className={Styles.inputBox}
-                                        sx={{fontSize: '13px', borderRadius: '0px', height: '39px' }}
+                                        className={Styles.inputBox}
+                                        sx={{ fontSize: '13px', width: '100%', borderRadius: '0px', height: '39px' }}
                                         id="outlined-adornment-weight"
                                         placeholder="Search for all your business needs"
                                         endAdornment={<InputAdornment position="end"></InputAdornment>}
@@ -44,42 +47,42 @@ const MiddleHeader = (props) => {
                                             'aria-label': 'weight',
                                         }}
                                     />
-                                 
+
                                 </FormControl>
-                               
-                            
+
+
 
 
                                 <IconButton color="secondary" aria-label="add an alarm" className={`${Styles.searchBtn}`} sx={{ borderRadius: '0px 4px 4px 0px', padding: '7px 21px', border: '1px solid #444', bgcolor: color.palette.secondary.main, color: color.palette.common.white }}>
-                                <img width="20px" src={searchIcon} alt={searchIcon} sx={{ color: 'red' }}/>
+                                    <img width="20px" src={searchIcon} alt={searchIcon} sx={{ color: 'red' }} />
                                 </IconButton>
                             </Box>
                             <Box className={Styles.inkAndtoner}>
-                                <Button sx={{ padding: '6px 20px' }} variant="outlined" startIcon={<InvertColorsIcon sx={{ color: 'red' }} />}>
+                                <Button variant="outlined" startIcon={<InvertColorsIcon sx={{ color: 'red' }} />}>
                                     Ink &amp; Toner
                                 </Button>
                             </Box>
                         </Box>
                     </Box>
                     <Box className={Styles.supportmenu}>
-                        <ul>
+                        <List>
 
                             {
                                 supportArr.map((svalue) => {
                                     return (
 
-                                        <li>
-                                            <button>
+                                        <ListItem>
+                                            <Button>
                                                 {svalue.icon}
                                                 <Box className={Styles.icontext}>{svalue.text}</Box>
-                                            </button>
-                                        </li>
+                                            </Button>
+                                        </ListItem>
 
                                     )
                                 })
                             }
 
-                        </ul>
+                        </List>
                     </Box>
                 </Box>
             </Container>

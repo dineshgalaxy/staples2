@@ -34,10 +34,6 @@ const ButtonOverRide = {
           color: color.palette.secondary.main,
           '&:hover': {
             boxShadow: 'none',
-            backgroundColor:color.palette.secondary.main,
-            color:'white',
-            border:'1px solid #444'
-
           },
         },
       },

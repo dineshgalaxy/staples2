@@ -13,6 +13,7 @@ import Brands from './components/Brands/Brands';
 import Updates from './components/Updates/Updates';
 import ControlledAccordions from './components/demo';
 import Footer from './components/Footer/Footer';
+import SubFooter from './components/Footer/SubFooter/SubFooter';
 function App() {
   return (
    <ThemeProvider theme={theme}>
@@ -28,6 +29,7 @@ function App() {
   <Brands/>
   <Updates/>
   <Footer/>
+  {/* <SubFooter/> */}
    </ThemeProvider>
   );
 }

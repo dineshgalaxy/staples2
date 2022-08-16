@@ -20,60 +20,63 @@ const Menubar = (props) => {
   };
   const classes = useStyles();
   return (
-    <Container>
-    <Box className={classes.menubar}>
-      <List>
-        {
-          menuItem.map((menuvalue) => {
-            return (
-              <ListItem>
-                <Link href="#" display="flex" alignItems="center"
-                  id="basic-button"
-                  aria-controls={open ? 'basic-menu' : undefined}
-                  aria-haspopup="true"
-                  aria-expanded={open ? 'true' : undefined}
-                  onClick={handleClick}
-                >
-                  {menuvalue.listText}
-                  <KeyboardArrowDownIcon />
-                </Link>
+    <Box borderBottom='1px solid #e7e7e7'>
+      <Container maxWidth="xl">
+        <Box className={classes.menubar}>
+          <List>
+            {
+              menuItem.map((menuvalue) => {
+                return (
+                  <>
+                    <ListItem>
+                      <Link href="#" display="flex" alignItems="center"
+                        id="basic-button"
+                        aria-controls={open ? 'basic-menu' : undefined}
+                        aria-haspopup="true"
+                        aria-expanded={open ? 'true' : undefined}
+                        onClick={handleClick}
+                      >
+                        {menuvalue.listText}
+                        <KeyboardArrowDownIcon />
+                      </Link>
+                    </ListItem>
 
-                <Box>
-                  <Menu
-                    className={classes.menuItem}
-                    id="basic-menu"
-                    anchorEl={anchorEl}
-                    open={open}
-                    onClose={handleClose}
-                    MenuListProps={{
-                      'aria-labelledby': 'basic-button',
-                    }}
-                  >
-                    <MenuItem onClick={handleClose}>
-                      <Link underline="none" fontWeight="700" fontFamily={typography.fontFamily.MotivaRegular} color={color.palette.secondary.main} fontSize={typography.mdsm}>  Computer Accessories & Components</Link>
+                  </>
+                )
+              })
+            }
+
+          </List>
+          <Box display="flex">
+            <List
+              className={classes.menuItem}
+              id="basic-menu"
+              anchorEl={anchorEl}
+              open={open}
+              onClose={handleClose}
+              MenuListProps={{
+                'aria-labelledby': 'basic-button',
+              }}
+            >
+              <ListItem onClick={handleClose}>
+                <Link underline="none" fontWeight="700" fontFamily={typography.fontFamily.MotivaRegular} color={color.palette.secondary.main} fontSize={typography.mdsm}>  Computer Accessories & Components</Link>
 
 
-                    </MenuItem>
-                    <MenuItem onClick={handleClose}>
-                      <Link underline="none" fontWeight="700" fontFamily={typography.fontFamily.MotivaRegular} color={color.palette.secondary.main} fontSize={typography.mdsm}>  Computers</Link>
-                    </MenuItem>
-                    <MenuItem onClick={handleClose}>
-                      <Link underline="none" fontWeight="700" fontFamily={typography.fontFamily.MotivaRegular} color={color.palette.secondary.main} fontSize={typography.mdsm}>  Electronics</Link>
-                    </MenuItem>
-
-
-                  </Menu>
-
-                </Box>
               </ListItem>
-            )
-          })
-        }
+              <ListItem onClick={handleClose}>
+                <Link underline="none" fontWeight="700" fontFamily={typography.fontFamily.MotivaRegular} color={color.palette.secondary.main} fontSize={typography.mdsm}>  Computers</Link>
+              </ListItem>
+              <ListItem onClick={handleClose}>
+                <Link underline="none" fontWeight="700" fontFamily={typography.fontFamily.MotivaRegular} color={color.palette.secondary.main} fontSize={typography.mdsm}>  Electronics</Link>
+              </ListItem>
 
-      </List>
 
+            </List>
+
+          </Box>
+        </Box>
+      </Container>
     </Box>
-    </Container>
   )
 }
 

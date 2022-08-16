@@ -1,5 +1,6 @@
 import { makeStyles } from '@mui/styles';
 import color from '../../../utils/color';
+import typography from '../../../utils/typography';
 const useStyles = makeStyles((theme) => ({
     middleheader: {
         display: 'flex',
@@ -13,9 +14,11 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     logo: {
-        minWidth: '140px',
+        maxWidth: '140px',
+        width:'100%',
         [theme.breakpoints.up('lg')]: {
-            minWidth: '160px',
+            maxWidth: '160px',
+            width:'100%'
         }
     },
     
@@ -32,19 +35,19 @@ const useStyles = makeStyles((theme) => ({
     },
     searchbar: {
         display: 'flex',
-        width: '620px',
+        width:'100%',
         alignItems: ' center',
-        justifyContent: 'center',
-        [theme.breakpoints.up('lg')]: {
-            minWidth: '685px',
+        justifyContent: 'space-between',
+        [theme.breakpoints.up('xsm')]: {
+            width:'685px',
         }
     },
-    inputBox: {
-        minWidth: '385px',
-        [theme.breakpoints.up('lg')]: {
-            minWidth: '460px',
-        }
-    },
+    // inputBox: {
+      
+    //     [theme.breakpoints.up('lg')]: {
+          
+    //     }
+    // },
     input: {
         '&:focus': {
             border: '1px solid',
@@ -65,13 +68,40 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: '0px 4px 4px 0px',
         '&:hover': {
             backgroundColor: color.palette.secondary.main,
-        }
+        },
+        
+    },
+    formControl:{
+            flexGrow:'1'
     },
     search: {
         display: ' flex',
+        flexGrow: 1,
+        [theme.breakpoints.up('lg')]: {
+            flexGrow: 1,
+        }
     },
     inkAndtoner: {
-        marginLeft: ' 20px',
+        marginLeft: ' 10px',
+        '& button':{
+            padding: '6px 4px' ,
+            whiteSpace:'nowrap',
+            fontSize:typography.mdsm.fontSize,
+            '& span':{
+                display:'none',
+                [theme.breakpoints.up('sm')]: {
+                    display:'inherit',
+                }
+            },
+            [theme.breakpoints.up('sm')]: {
+                padding: '6px 20px',
+                fontSize:typography.md.fontSize,
+            }
+            
+        },
+        [theme.breakpoints.up('sm')]: {
+            marginLeft: ' 20px',
+        }
     },
 
     supportmenu: {
@@ -91,6 +121,7 @@ const useStyles = makeStyles((theme) => ({
                     minHeight: '60px',
                     width: '100%',
                     fontSize: '13px',
+                    flexDirection:'column',
                     '& i': {
                         fontSize: '18px',
                         lineHeight: 1.5,
@@ -124,6 +155,12 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.up('xsm')]:{
             display:'block',
         }
+    },
+    humburger:{
+        display:'inline-block',
+        [theme.breakpoints.up('xsm')]:{
+            display:'none',
+        }
     }
 
 }));
@@ -132,61 +169,3 @@ const useStyles = makeStyles((theme) => ({
 export default useStyles;
 
 
-// .supportmenu ul li:last-child{
-//     position: 'relative',
-
-//     button{
-//         background: 'red',
-//         color: 'white',
-//     }
-// }
-// .supportmenu ul li:last-child::after{
-//     min-height:' 10px',
-//     width: '100%',
-//     position: 'absolute',
-//     background: 'red',
-//     content: ""
-//     z-index: 1,
-//     /* top: 0; */
-//     left: 0,
-//     border-radius: '0 0 3px 3px',
-//     bottom: '-6px',
-// }
-
-// @media only screen and (max-width:1023px){
-//     .middleheader{
-//         flex-flow: 'row wrap',
-//         background: '#fff'.
-//         height: 'auto'.
-//     }
-//     .searchTop{
-//         flex:'1 1 100%',
-//         order:3,
-//         max-width: '100%',
-//         padding: '10px 15px',
-//         border-top: '1px solid #e7e7e7',
-//     }
-//     .searchbar{
-//         margin:' 0 auto',
-//     }
-//     .logo{
-//         margin-left: '38px', 
-//         max-width: '132px',
-//         width: '100%',
-//     }
-// }
-// @media only screen and (max-width:767px){
-//     .supportmenu ul li{
-//         min-width: '45px',
-//         min-height:'auto',
-//         border-left: 0,
-//     button{
-//         min-height: 'auto',
-//     }
-//         .icontext
-// {
-//     display: 'none',
-// }
-//     }
-
-// }

@@ -55,11 +55,10 @@ const Products =()=>{
           </Grid>
         </Box>
 
-        <Box sx={{ flexGrow: 1 }}>
+        <Box sx={{ flexGrow: 1 }} marginTop="35px">
           <Grid
             container
-            spacing={{ xs: 2, md: 1 }}
-            columns={{ xs: 4, sm: 8, md: 12 }}
+            spacing={{ xs: 1, md: 1 }}
           >
             {shoppingCart.map((product, index) => (
               <Grid item xs={12} sm={6} md={6} key={index}>
@@ -70,7 +69,7 @@ const Products =()=>{
                   }}
                 >
                   <Link href="#" underline="none">
-                    <img src={product.imgsrc} alt="product img "></img>
+                    <img src={product.imgsrc} alt="product img " width="100%"></img>
                   </Link>
                 </Paper>
               </Grid>

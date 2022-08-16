@@ -83,7 +83,7 @@ const Banner = () => {
         );
     }
     return (
-        <Box>
+        <Box marginBottom="10px"   >
             <Container maxWidth="xl">
                 <Slider {...settings}>
                     {

@@ -4,7 +4,7 @@ const useStyles = makeStyles((theme) => ({
     menubar:
     {
         display:'none',
-        borderBottom: '1px solid #e7e7e7',
+     
         padding:'6px 0',
         '& ul': {
             listStyle: 'none',
