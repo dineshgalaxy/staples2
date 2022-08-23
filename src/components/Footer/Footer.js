@@ -9,6 +9,9 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { List, ListItem, Link, Button } from '@mui/material';
 import typography from '../../utils/typography';
 import Grid from '@mui/material/Grid';
+import SubFooter from "./SubFooter/SubFooter";
+import Copyright from "./Copyright/Copyright";
+import MobileFooter from "./MobileFooter";
 
 const Footer = () => {
   const [expanded, setExpanded] = useState(false);
@@ -19,126 +22,105 @@ const Footer = () => {
   const classes = useStyles();
 
   return (
-    <Box bgcolor="secondary.main">
+    <>
+    <Box bgcolor="secondary.main" className={classes.footerSection} >
       <Container maxWidth="xl">
-        <Box className={classes.footerMenu} display="flex" >
-
+        <Box className={classes.footerMenu}>
           <Grid
             container>
+            {
+              footerItem.map((value) => {
+                return (
+                  <Grid item xs={12} sm={4} md={3} mb="15px">
+                    <Typography fontWeight="700" variant="h4" fontFamily={typography.fontFamily.MotivaRegular} fontSize={typography.lg.fontSize} underline="none" href="#" color="common.white"> {value.heading}</Typography>
+                    <List> 
+                      <ListItem>
+                        <Link fontSize={typography.mdsm.fontSize} underline="none" href="#" color="common.white"> {value.links_1}</Link>
+                      </ListItem>
+                      <ListItem>
+                        <Link fontSize={typography.mdsm.fontSize} underline="none" href="#" color="common.white"> {value.links_2}</Link>
+                      </ListItem>
+                      <ListItem>
+                        <Link fontSize={typography.mdsm.fontSize} underline="none" href="#" color="common.white"> {value.links_3}</Link>
+                      </ListItem>
+                      <ListItem>
+                        <Link fontSize={typography.mdsm.fontSize} underline="none" href="#" color="common.white"> {value.links_4}</Link>
+                      </ListItem>
+                      <ListItem>
+                        <Link fontSize={typography.mdsm.fontSize} underline="none" href="#" color="common.white"> {value.links_5}</Link>
+                      </ListItem>
+                    </List>
+                  </Grid>
 
-            <Grid item xs={12} sm={4} md={3}>
-              <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
-                <AccordionSummary 
-                className={classes.accordionSummary}
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel1bh-content"
-                  id="panel1bh-header"
-                >
+                )
+              })
+            }
+             <Grid item xs={12} sm={4} md={3} mb="15px">
+                    <Typography fontWeight="700" variant="h4" fontFamily={typography.fontFamily.MotivaRegular} fontSize={typography.lg.fontSize} underline="none" href="#" color="common.white"> New Customer</Typography>
+                    <List> 
+                      <ListItem>
+                        <Link fontSize={typography.mdsm.fontSize} underline="none" href="#" color="common.white"> Become a Customer</Link>
+                      </ListItem>
+                      <ListItem>
+                        <Link fontSize={typography.mdsm.fontSize} underline="none" href="#" color="common.white"> Govt. Customers</Link>
+                      </ListItem>
+                      <ListItem>
+                        <Link fontSize={typography.mdsm.fontSize} underline="none" href="#" color="common.white"> Membership</Link>
+                      </ListItem>
+                     
+                    </List>
+                    <Typography mt="15px" fontWeight="700" variant="h4" fontFamily={typography.fontFamily.MotivaRegular} fontSize={typography.lg.fontSize} underline="none" href="#" color="common.white">Join the Staples Team</Typography>
+                    <List >
+                      <ListItem>
+                        <Link fontSize={typography.mdsm.fontSize} underline="none" href="#" color="common.white"> Careers</Link>
+                      </ListItem>
+                    </List>
+                  </Grid>
 
-                  <Link fontWeight="700" fontSize={typography.lg.fontSize} underline="none" href="#"  color="common.white"> Customer Service</Link>
-
-                </AccordionSummary>
-                <AccordionDetails sx={{ padding: '0 0px' }}>
-                  <List className={classes.mobilemenu} sx={{ padding: '15px 16px', display: 'flex', flexDirection: 'column', color: "common.white" }}>
-                    <ListItem>
-                      <Link href="#" color="common.white" underline="none" lineHeight="24px" fontSize={typography.lg} >Wealth services
-                      </Link>
-                    </ListItem>
-                    <ListItem>
-                      <Link href="#" color="common.white" underline="none" lineHeight="24px" fontSize={typography.lg} >Personal financial consulting
-                      </Link>
-                    </ListItem>
-                  </List>
-                </AccordionDetails>
-              </Accordion>
-            </Grid>
-            <Grid item xs={12} sm={4} md={3}>
-            <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
-            <AccordionSummary  className={classes.accordionSummary}
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel2bh-content"
-              id="panel2bh-header"
-            >
-              <Link fontWeight="700"  fontSize={typography.lg.fontSize} underline="none" href="#" color="common.white"
-
-              >Corporate Info</Link>
-            </AccordionSummary>
-            <AccordionDetails sx={{ padding: '0 0px' }}>
-              <List className={classes.mobilemenu} sx={{ padding: '15px 16px', display: 'flex', flexDirection: 'column', color: "common.white" }}>
-                <ListItem>
-                  <Link href="#" color="common.white" underline="none" lineHeight="24px" fontSize={typography.lg} >Wealth services
-                  </Link>
-                </ListItem>
-                <ListItem>
-                  <Link href="#" color="common.white" underline="none" lineHeight="24px" fontSize={typography.lg} >Personal financial consulting
-                  </Link>
-                </ListItem>
-              </List>
-            </AccordionDetails>
-          </Accordion>
-            </Grid>
-            <Grid item xs={12} sm={4} md={3}>
-            <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
-            <AccordionSummary className={classes.accordionSummary}
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel3bh-content"
-              id="panel3bh-header"
-            >
-              <Link fontWeight="700"  fontSize={typography.lg.fontSize} underline="none" href="#" color="common.white"
-
-              >
-                Staples Corporate Solutions
-              </Link>
-            </AccordionSummary>
-            <AccordionDetails sx={{ padding: '0 0px' }}>
-              <List className={classes.mobilemenu} sx={{ padding: '15px 16px', display: 'flex', flexDirection: 'column', color: "common.white" }}>
-                <ListItem>
-                  <Link href="#" pb="0px" color="common.white" underline="none" lineHeight="24px" fontSize={typography.lg} >Wealth services
-                  </Link>
-                </ListItem>
-                <ListItem>
-                  <Link href="#" color="common.white" underline="none" lineHeight="24px" fontSize={typography.lg} >Personal financial consulting
-                  </Link>
-                </ListItem>
-              </List>
-            </AccordionDetails>
-          </Accordion>
-              </Grid>
-              <Grid item xs={12} sm={4} md={3}>
-              <Accordion expanded={expanded === 'panel4'} onChange={handleChange('panel4')}>
-            <AccordionSummary className={classes.accordionSummary}
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel4bh-content"
-              id="panel4bh-header"
-            >
-              <Link fontWeight="700"  fontSize={typography.lg.fontSize} underline="none" href="#" color="common.white"
-              >
-               New Customer
-              </Link>
-            </AccordionSummary>
-            <AccordionDetails sx={{ padding: '0 0px' }}>
-              <List className={classes.mobilemenu} sx={{ padding: '15px 16px', display: 'flex', flexDirection: 'column', color: "common.white" }}>
-                <ListItem>
-                  <Link href="#" pb="0px" color="common.white" underline="none" lineHeight="24px" fontSize={typography.lg} >Wealth services
-                  </Link>
-                </ListItem>
-                <ListItem>
-                  <Link href="#" color="common.white" underline="none" lineHeight="24px" fontSize={typography.lg} >Personal financial consulting
-                  </Link>
-                </ListItem>
-              </List>
-            </AccordionDetails>
-          </Accordion>
-              </Grid>
+           
+          
           </Grid>
 
 
-    
-    
-        </Box>
 
+
+        </Box>
+            <MobileFooter/>
       </Container>
+    
     </Box>
+      <SubFooter/>
+      <Copyright/>
+    </>
   )
 }
+
+
+
+const footerItem = [
+  {
+    heading: 'Customer Service',
+    links_1: 'Help Center',
+    links_2: 'Contact Us',
+    links_3: 'Recall Information',
+    links_4: 'Safety Data Sheets',
+
+
+  },
+  {
+    heading: 'Corporate Info',
+    links_1: 'Staples Professional Overview',
+    links_2: 'Industries Served',
+    links_3: 'Blog',
+    links_4: 'Our Brands'
+  },
+  {
+    heading: 'Staples Corporate Solutions',
+    links_1: 'Office Products',
+    links_2: 'Technology Products',
+    links_3: 'Furniture',
+    links_4: 'Facilities',
+    links_5: 'Promotional Products'
+  },
+]
 export default Footer;

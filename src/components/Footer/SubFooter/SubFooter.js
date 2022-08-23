@@ -11,7 +11,8 @@ import typography from "../../../utils/typography";
 const SubFooter = () => {
     const classes = useStyles();
     return (
-        <Box bgcolor="#666">
+        <Box bgcolor="#666"     padding="20px 0"
+        >
             <Container maxWidth="xl">
                     <Box className={classes.footmid}>
                         <Box className={classes.miditem}>
@@ -25,27 +26,11 @@ const SubFooter = () => {
                             </Box>
                         </Box>
                         <Box className={classes.midImg} display="flex" justifyContent="center" alignItems="center">
-                            <img src="bullfrogpower.svg" alt="img"></img>
+                            <img src="bullfrogpower.svg" alt="img" style={{ paddingRight: "15px" }}></img>
                             <img src="accessibility-logo.svg" alt="img"></img>
 
                         </Box>
                     </Box>
-                <Box className={classes.copyright}>
-                    <Box>
-                        <p>© Copyright 2021 Staples Professional Inc. All rights reserved.</p>
-                        <List>
-                            <ListItem className={classes.listA}>
-                                <Link href="#" >Terms & Conditions</Link>
-                            </ListItem>
-                            <ListItem>
-                                <Link href="#">Privacy Notice</Link>
-                            </ListItem>
-                            <ListItem>
-                                <Link href="#">Staples Professional</Link>
-                            </ListItem>
-                        </List>
-                    </Box>
-                </Box>
             </Container>
         </Box>
     )

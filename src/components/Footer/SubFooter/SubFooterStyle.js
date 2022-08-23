@@ -11,13 +11,17 @@ const useStyles = makeStyles((theme) => ({
    },
    footmid:{
        display:'flex ',
-       justifyContent:'space-between'
+       flexWrap:'wrap',
+       justifyContent:'space-between',
+       [theme.breakpoints.up('sm')]:{
+           flexWrap:'nowrap'
+       }
    },
    midImg:{
     display:' flex',
-
     '& img':{
-        width: '100%'
+        width: '100%',
+        height:'auto'
     }
 }
 }));

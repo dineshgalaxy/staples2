@@ -12,7 +12,7 @@ const color = {
         },
         secondary: {
             light: '#3e7cb1',
-            extraLight:'#64a6bd',
+            extraLight:'#595959',
             main: '#444',
             dark: '#666',
         },

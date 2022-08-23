@@ -6,10 +6,13 @@ const Accordion = {
                 boxShadow: 'none',
                 '&::before': {
                     height: '0px'
-                }
+                },
+                '& .Mui-expanded': {
+                    minHeight: '0!important',
+                    },
             },
            
-
+            
 
         },
 
@@ -17,11 +20,17 @@ const Accordion = {
     MuiAccordionSummary: {
         styleOverrides: {
             root: {
-                // justifyContent: 'flex-start'
+                minHeight: '0!important',
+                padding:'0px',
+                justifyContent:'flex-start',
+                '& .Mui-expanded': {
+                    margin: '0!important',
+                   
+                    },
             },
             content: {
-                // flexGrow: 0,
-                // margin: 0
+                flexGrow:'0',
+                margin: 0,
             },
            
             expandIconWrapper: {
@@ -31,6 +40,7 @@ const Accordion = {
             }
         }
 
-    }
+    },
+  
 };
 export default Accordion;

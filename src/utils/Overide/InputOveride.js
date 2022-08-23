@@ -5,6 +5,8 @@ const InputOveride = {
     MuiInputBase: {
         styleOverrides: {
             root:{
+                height:'36px',
+                backgroundColor:'white',
                 '@media (max-width: 600px)': {
                     fontSize:typography.sm.fontSize,
                   }

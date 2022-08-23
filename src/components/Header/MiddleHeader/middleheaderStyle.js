@@ -7,45 +7,49 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'space-between',
         alignItems: 'center',
         position: 'relative',
-        flexWrap:'wrap',
+        flexWrap: 'wrap',
         [theme.breakpoints.up('md')]: {
             minWidth: '160px',
-            flexWrap:'nowrap',
+            flexWrap: 'nowrap',
         }
     },
     logo: {
-        maxWidth: '140px',
-        width:'100%',
+        maxWidth: '110px',
+        width: '100%',
+        marginLeft: '30px',
         [theme.breakpoints.up('lg')]: {
             maxWidth: '160px',
-            width:'100%'
+            width: '100%'
+        },
+        [theme.breakpoints.up('xsm')]: {
+            marginLeft: '0px',
         }
     },
-    
-    searchTop:{
-    [theme.breakpoints.down('md')]: {
-        display: 'flex',
-        flex: '1 1 100%',
-        order: 3,
-        borderTop:' 1px solid #e7e7e7',
-        paddingTop: '10px',
-        paddingBottom:' 10px',
-        justifyContent:'center'
-    }
+
+    searchTop: {
+        [theme.breakpoints.down('md')]: {
+            display: 'flex',
+            flex: '1 1 100%',
+            order: 3,
+            borderTop: ' 1px solid #e7e7e7',
+            paddingTop: '10px',
+            paddingBottom: ' 10px',
+            justifyContent: 'center'
+        }
     },
     searchbar: {
         display: 'flex',
-        width:'100%',
+        width: '100%',
         alignItems: ' center',
         justifyContent: 'space-between',
         [theme.breakpoints.up('xsm')]: {
-            width:'685px',
+            width: '685px',
         }
     },
     // inputBox: {
-      
+
     //     [theme.breakpoints.up('lg')]: {
-          
+
     //     }
     // },
     input: {
@@ -69,10 +73,10 @@ const useStyles = makeStyles((theme) => ({
         '&:hover': {
             backgroundColor: color.palette.secondary.main,
         },
-        
+
     },
-    formControl:{
-            flexGrow:'1'
+    formControl: {
+        flexGrow: '1'
     },
     search: {
         display: ' flex',
@@ -83,84 +87,115 @@ const useStyles = makeStyles((theme) => ({
     },
     inkAndtoner: {
         marginLeft: ' 10px',
-        '& button':{
-            padding: '6px 4px' ,
-            whiteSpace:'nowrap',
-            fontSize:typography.mdsm.fontSize,
-            '& span':{
-                display:'none',
+        '& button': {
+            padding: '6px 4px',
+            whiteSpace: 'nowrap',
+            fontSize: typography.mdsm.fontSize,
+            '& span': {
+                display: 'none',
                 [theme.breakpoints.up('sm')]: {
-                    display:'inherit',
+                    display: 'inherit',
                 }
             },
             [theme.breakpoints.up('sm')]: {
                 padding: '6px 20px',
-                fontSize:typography.md.fontSize,
+                fontSize: typography.md.fontSize,
             }
-            
+
         },
         [theme.breakpoints.up('sm')]: {
             marginLeft: ' 20px',
         }
     },
 
-    supportmenu: {
-        '&  ul': {
-            listStyle: 'none',
-            display: ' flex',
-            padding: 0,
-            '& li': {
-                borderLeft: '1px solid #e7e7e7',
-                minWidth: '70px',
-                minHeight: '60px',
-                width: '100%',
-                '& button': {
-                    background: 'white',
-                    border: 0,
-                    textAlign: 'center',
-                    minHeight: '60px',
-                    width: '100%',
-                    fontSize: '13px',
-                    flexDirection:'column',
-                    '& i': {
-                        fontSize: '18px',
-                        lineHeight: 1.5,
-                    },
-                    '& icontext': {
-                        fontSize: '11px',
-
-                    }
-                }
+    icontext: {
+        display: 'none',
+        [theme.breakpoints.up('xsm')]: {
+            display: 'block',
+        }
+    },
+    humburger: {
+        display: 'inline-block',
+        [theme.breakpoints.up('xsm')]: {
+            display: 'none',
+        }
+    },
+    checkBox: {
+        '& span': {
+            fontSize: typography.mdsm.fontSize
+        }
+    },
+    sideBarMenu: {
+        width: '100%',
+        padding: '0px',
+        minWidth: '320px',
+        height: 'auto',
+        background: '#f3f3f3',
+        // display:'flex',
+        // flexDirection:'column',
+        '& li': {
+            padding: '6px 10px',
+            whiteSpace: 'normal',
+            borderBottom: '1px solid #e4e4e4',
+            '&:hover': {
+                color: '#c00',
+                backgroundColor: ' #fff',
             },
-            '& li:last-child': {
-                position: 'relative',
+            '& a': {
+                '&:hover': {
+                    color: '#c00',
+
+                },
+            }
+        }
+
+    },
+    supportmenu: {
+        '& ul': {
+            display: 'flex',
+            padding: '0px',
+            '& li': {
+                border: '0px',
+                borderLeft: '0px',
                 '& button': {
+                    flexDirection: 'column',
+                    minWidth: '50px',
+                    padding: '12px 8px',
+                    '& span': {
+                        margin: '0px'
+                    },
+                    [theme.breakpoints.up('xsm')]:{
+                        minWidth: '73px',
+                    }
+
+                },
+                [theme.breakpoints.up('xsm')]:{
+                    borderLeft: '1px solid #e7e7e7',
+                }
+            }
+        }
+    },
+    cartBtn:{
+           position:'relative',
+            '& button':{
+                zIndex:1,
+                color:color.palette.common.white,
+                '&:before':{
                     background: '#c00',
                     color: '#fff',
-                    minHeight: '65px',
+                    minHeight: '50px',
                     position: 'absolute',
-                    content: "",
+                    content: '""',
                     top: 0,
                     left: 0,
                     width: '100%',
-                    zIndex: 1,
+                    zIndex: -1,
                     borderRadius: '0 0 3px 3px',
+                    [theme.breakpoints.up('xsm')]:{
+                        minWidth: '65px',
+                    }
                 }
             }
-
-        },
-    },
-    icontext:{
-        display:'none',
-        [theme.breakpoints.up('xsm')]:{
-            display:'block',
-        }
-    },
-    humburger:{
-        display:'inline-block',
-        [theme.breakpoints.up('xsm')]:{
-            display:'none',
-        }
     }
 
 }));

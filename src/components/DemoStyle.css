@@ -1,0 +1,18 @@
+.card-container {
+    width: 100px;
+   
+}
+.Info {
+    position: absolute;
+    width: 100%;
+    left:0;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+}
+
+.Info.Show {
+    opacity: 1;
+}
