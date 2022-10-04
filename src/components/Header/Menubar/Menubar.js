@@ -44,7 +44,7 @@ const Menubar = (props) => {
                                                 <KeyboardArrowDownIcon />
                                             </Link>
 
-                                           
+
                                         </ListItem>
                                     </>
                                 )
@@ -56,54 +56,21 @@ const Menubar = (props) => {
                 </Box>
                 <Popover
 
-open={open}
-anchorEl={anchorEl}
-onClose={handleClose}
-anchorOrigin={{
-    vertical: "bottom",
-    horizontal: "left"
-}}
->
-                 <Box display="flex"  className={classes.menuItem}>
-                    <List className={classes.sideBarMenu}>
-                        {
-                            megaMenuSideBar.map((item) => {
-                                return (
-                                    <ListItem>
-                                        <Link href="#" underline="none" fontWeight="700" fontFamily={typography.fontFamily.MotivaRegular} color={color.palette.secondary.main} fontSize={typography.mdsm}>{item.list}</Link>
-                                    </ListItem>
-                                )
-                            })
-                        }
-
-
-
-                    </List>
-                    <Box display="flex" gap="30px" className={classes.megaMenu}>
-                        <List>
-                            <Link underline="none" fontSize={typography.mdsm} color="secondary.main" fontWeight="700">Computer Accessories
-                            </Link>
+                    open={open}
+                    anchorEl={anchorEl}
+                    onClose={handleClose}
+                    anchorOrigin={{
+                        vertical: "bottom",
+                        horizontal: "left"
+                    }}
+                >
+                    <Box display="flex" className={classes.menuItem}>
+                        <List className={classes.sideBarMenu}>
                             {
-                                megaMenu1.map((item) => {
-                                    return (
-                                        <ListItem onClick={handleClick}>
-                                            <Link href="#" underline="none" lineHeight='1.5' fontFamily={typography.fontFamily.MotivaRegular} color={color.palette.secondary.main} fontSize={typography.sm}>{item.list}</Link>
-                                        </ListItem>
-                                    )
-                                })
-                            }
-
-
-
-                        </List>
-                        <List>
-                            <Link underline="none" fontSize={typography.mdsm} color="secondary.main" fontWeight="700"> Computer Components
-                            </Link>
-                            {
-                                megaMenu2.map((item) => {
+                                megaMenuSideBar.map((item) => {
                                     return (
                                         <ListItem>
-                                            <Link href="#" underline="none" lineHeight='1.5' fontFamily={typography.fontFamily.MotivaRegular} color={color.palette.secondary.main} fontSize={typography.sm}>{item.list}</Link>
+                                            <Link href="#" underline="none" fontWeight="700" fontFamily={typography.fontFamily.MotivaRegular} color={color.palette.secondary.main} fontSize={typography.mdsm}>{item.list}</Link>
                                         </ListItem>
                                     )
                                 })
@@ -112,13 +79,46 @@ anchorOrigin={{
 
 
                         </List>
+                        <Box display="flex" gap="30px" className={classes.megaMenu}>
+                            <List>
+                                <Link underline="none" fontSize={typography.mdsm} color="secondary.main" fontWeight="700">Computer Accessories
+                                </Link>
+                                {
+                                    megaMenu1.map((item) => {
+                                        return (
+                                            <ListItem onClick={handleClick}>
+                                                <Link href="#" underline="none" lineHeight='1.5' fontFamily={typography.fontFamily.MotivaRegular} color={color.palette.secondary.main} fontSize={typography.sm}>{item.list}</Link>
+                                            </ListItem>
+                                        )
+                                    })
+                                }
+
+
+
+                            </List>
+                            <List>
+                                <Link underline="none" fontSize={typography.mdsm} color="secondary.main" fontWeight="700"> Computer Components
+                                </Link>
+                                {
+                                    megaMenu2.map((item) => {
+                                        return (
+                                            <ListItem>
+                                                <Link href="#" underline="none" lineHeight='1.5' fontFamily={typography.fontFamily.MotivaRegular} color={color.palette.secondary.main} fontSize={typography.sm}>{item.list}</Link>
+                                            </ListItem>
+                                        )
+                                    })
+                                }
+
+
+
+                            </List>
+                        </Box>
                     </Box>
-                </Box> 
                 </Popover>
 
-               
+
             </Container>
-            <MobileMenu/>
+            <MobileMenu />
         </Box>
     )
 }
@@ -127,7 +127,7 @@ export default Menubar;
 
 const menuItem = [
     { listText: 'products' },
-    { listText: 'services & solutions' },
+    { listText: 'services' },
     { listText: 'brands' },
     { listText: 'deals' },
     { listText: 'piblications' },

@@ -34,7 +34,7 @@ function App() {
   <Updates/>
   <Footer/>
   {/* <SubFooter/> */}
- 
+    <button style={{backgroundColor:'#556cd6'}}>Hrello</button>
    </ThemeProvider>
   );
 }

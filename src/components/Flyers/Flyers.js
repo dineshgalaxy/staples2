@@ -56,7 +56,7 @@ const Flyers = () => {
                                 <Typography variant="h4"
                                     fontSize={typography.mdxl}
                                     fontWeight="bolder"
-                                    mb="25px"
+                                    mb="24px"
                                     color={color.palette.secondary.main}
                                 >Catalogues & Product Guides</Typography>
 

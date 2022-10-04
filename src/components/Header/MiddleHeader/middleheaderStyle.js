@@ -183,7 +183,7 @@ const useStyles = makeStyles((theme) => ({
                 '&:before':{
                     background: '#c00',
                     color: '#fff',
-                    minHeight: '50px',
+                    minHeight: '65px',
                     position: 'absolute',
                     content: '""',
                     top: 0,
