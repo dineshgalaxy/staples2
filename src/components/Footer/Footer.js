@@ -99,7 +99,7 @@ const Footer = () => {
 
 const footerItem = [
   {
-    heading: 'Customer Service',
+    heading: 'Customer Servic',
     links_1: 'Help Center',
     links_2: 'Contact Us',
     links_3: 'Recall Information',
